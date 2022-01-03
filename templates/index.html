@@ -1,0 +1,222 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Price Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+
+
+</head>
+
+<body>
+
+<img src=
+"data:image/png;base64,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"
+         alt="TDS Logo", width="350", height="70", style="float:left">
+
+
+
+<style>
+body {
+  background-image: url("https://static.goindigo.in/content/dam/indigov2/6e-website/header/information/2019/08/NewFLight-Res.jpg");
+  background-position: 200%;
+  background-size: cover;
+}
+</style>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <h1>Predict Flight Price</h1>
+<!--                <a class="navbar-brand">PREDICT FLIGHT PRICE</a>-->
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+
+
+    <div class="container">
+
+
+
+        <form action="\predict" method="post">
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Source</h5>
+                            <select name="Source" id="Source" required="required">
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Kolkata">Kolkata</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Chennai">Chennai</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Destination</h5>
+                            <!-- Destination -->
+                            <select name="Destination" id="Destination" required="required">
+                                <option value="Delhi">Delhi</option>
+                                <option value="Cochin">Cochin</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Kolkata">Kolkata</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+             <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Departure</h5>
+                            <!-- Departure -->
+                            <input type="datetime-local" name="Dep_Time" id="Dep_Time" required="required">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Arrival</h5>
+                            <!-- Arrival -->
+                            <input type="datetime-local" name="Arrival_Time" id="Arrival_Time" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+<!--            <div class="row">-->
+<!--                <div class="col-sm-6">-->
+<!--                    <div class="card">-->
+<!--                        <div class="card-body">-->
+<!--                            &lt;!&ndash; Source &ndash;&gt;-->
+<!--                            <h5 class="card-title">Source</h5>-->
+<!--                            <select name="Source" id="Source" required="required">-->
+<!--                                <option value="Mumbai">Mumbai</option>-->
+<!--                                <option value="Kolkata">Kolkata</option>-->
+<!--                                <option value="Delhi">Delhi</option>-->
+<!--                                <option value="Chennai">Chennai</option>-->
+<!--                            </select>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-sm-6">-->
+<!--                    <div class="card">-->
+<!--                        <div class="card-body">-->
+<!--                            <h5 class="card-title">Destination</h5>-->
+<!--                            &lt;!&ndash; Destination &ndash;&gt;-->
+<!--                            <select name="Destination" id="Destination" required="required">-->
+<!--                                <option value="Delhi">Delhi</option>-->
+<!--                                <option value="Cochin">Cochin</option>-->
+<!--                                <option value="Hyderabad">Hyderabad</option>-->
+<!--                                <option value="Kolkata">Kolkata</option>-->
+<!--                            </select>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Airline</h5>
+                            <!-- Airline -->
+                            <select name="airline" id="airline" required="required">
+                                <option value="Jet Airways">GoAir</option>
+                                <option value="IndiGo">Vistara</option>
+                                <option value="Vistara Premium economy">Vistara Premium economy</option>
+                                <option value="Air India">Air India</option>
+                                <option value="Multiple carriers">Multiple carriers</option>
+                                <option value="SpiceJet">SpiceJet</option>
+                                <option value="Vistara">Indigo</option>
+                                <option value="Trujet">Trujet</option>
+                                <option value="Air Asia">Air Asia</option>
+                                <option value="GoAir">Jet Airways</option>
+                                  <option value="Jet Airways Business">Jet Airways Business</option>
+                                <option value="Multiple carriers Premium economy">Multiple carriers Premium economy
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Stopage</h5>
+                            <!-- Total Stops -->
+                            <select name="stops" required="required">
+                                <option value="0">Non-Stop</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+
+
+            <!-- Submit -->
+            <input type="submit" value="Submit" class="btn btn-secondary">
+        </form>
+
+
+        <h1>{{ prediction_text }}</h1>
+
+        <br>
+        <p> </p>
+
+    </div>
+
+
+
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
